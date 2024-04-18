@@ -14,3 +14,9 @@
  * Learned about Compound Assignments, Concatenations and more about objects today. 
 
  * Still not done with the FCC lesson because of researching what I learned and taking notes so I could understand it better in the future when I look at my notes.
+
+ # 04-18-2024 (Build Role Playing Game)
+
+ * Learned about **for** loops today. 
+ 
+ * Completed the first course on learning basic javascript by building a role playing game. Where they taught me about arrays, strings, objects, functions, loops, if/else statements, and more.
