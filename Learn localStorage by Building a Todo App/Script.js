@@ -13,6 +13,8 @@ const descriptionInput = document.getElementById("description-input");
 const taskData = [];
 let currentTask = {};
 
+
+
 const reset = () => {
     titleInput.value = "";
     dateInput.value = "";
@@ -26,14 +28,20 @@ openTaskFormBtn.addEventListener("click", () =>
 );
 
 closeTaskFormBtn.addEventListener("click", () => {
-    confirmCloseDialog.showModal();
+    const formInputsContainValues = titleInput.value || dateInput.value || descriptionInput.value;
+
+    if (formInputsContainValues) {
+        confirmCloseDialog.showModal();
+    } else {
+        reset();
+    }
 });
 
 cancelBtn.addEventListener("click", () => confirmCloseDialog.close());
 
 discardBtn.addEventListener("click", () => {
     confirmCloseDialog.close();
-    reset();
+    reset()
 });
 
 taskForm.addEventListener("submit", (e) => {
@@ -51,18 +59,19 @@ taskForm.addEventListener("submit", (e) => {
         taskData.unshift(taskObj);
     }
 
-    taskData.forEach(({ id, title, date, description }) => {
-        (tasksContainer.innerHTML += `
-          <div class="task" id="${id}">
-            <p><strong>Title:</strong> ${title}</p>
-            <p><strong>Date:</strong> ${date}</p>
-            <p><strong>Description:</strong> ${description}</p>
-            <button type="button" class="btn">Edit</button>
-            <button type="button" class="btn">Delete</button>
-          </div>
-        `)
-    }
+    taskData.forEach(
+        ({ id, title, date, description }) => {
+            (tasksContainer.innerHTML += `
+        <div class="task" id="${id}">
+          <p><strong>Title:</strong> ${title}</p>
+          <p><strong>Date:</strong> ${date}</p>
+          <p><strong>Description:</strong> ${description}</p>
+          <button type="button" class="btn">Edit</button>
+          <button type="button" class="btn">Delete</button>
+        </div>
+      `)
+        }
     );
 
-    reset();
+    reset()
 });
