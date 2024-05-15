@@ -28,10 +28,10 @@ const addOrUpdateTask = () => {
 
     updateTaskContainer()
     reset()
-
 };
 
 const updateTaskContainer = () => {
+
     taskData.forEach(
         ({ id, title, date, description }) => {
             (tasksContainer.innerHTML += `
@@ -40,7 +40,7 @@ const updateTaskContainer = () => {
           <p><strong>Date:</strong> ${date}</p>
           <p><strong>Description:</strong> ${description}</p>
           <button type="button" class="btn">Edit</button>
-          <button type="button" class="btn">Delete</button>
+          <button type="button" class="btn">Delete</button> 
         </div>
       `)
         }
@@ -78,5 +78,5 @@ discardBtn.addEventListener("click", () => {
 taskForm.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    reset()
+    addOrUpdateTask();
 });
