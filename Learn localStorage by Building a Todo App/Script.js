@@ -26,6 +26,8 @@ const addOrUpdateTask = () => {
         taskData.unshift(taskObj);
     }
 
+    updateTaskContainer()
+    reset()
 
 };
 
