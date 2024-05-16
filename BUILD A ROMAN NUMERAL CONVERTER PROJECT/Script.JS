@@ -18,15 +18,14 @@ const numerals = [
     ["I", 1]
 ];
 
-input.addEventListener("keydown", event => {
-    if (event.key === "Enter") {
+input.addEventListener("keydown", e => {
+    if (e.key === "Enter") {
         convert.click()
     }
 });
 
 convert.addEventListener("click", () => {
-    let value = input.value
-
+    let value = input.value;
     if (!value) {
         output.innerText = "Please enter a valid number"
     } else if (value < 0) {
@@ -34,16 +33,14 @@ convert.addEventListener("click", () => {
     } else if (value > 3999) {
         output.innerText = "Please enter a number less than or equal to 3999"
     } else {
-        let result = ''
+        let result = "";
 
-        for (let i = 0; o < numerals.length; i++) {
-            let [roman, number] = numerals[i]
-
+        for (const [roman, number] of numerals) {
             while (value >= number) {
-                result += roman
-                value -= number
+                result += roman;
+                value -= number;
             }
         }
-        output.innerText = result
+        output.innerText = result;
     }
 });
