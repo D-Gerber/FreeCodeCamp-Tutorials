@@ -15,3 +15,15 @@ check.addEventListener("click", () => {
     }
 });
 clear.addEventListener("click", () => results.innerText = "")
+
+
+
+/*
+Regex:
+Optional one with a space => (1\s?)?
+Three digits with optional parentheses => (\(\d{3}\)|\d{3})
+Optional hyphen or space => ([\s-]?)
+Three digits => \d{3}
+Optional hyphen or space => ([\s-]?)
+Four digits => \d{4}
+*/
